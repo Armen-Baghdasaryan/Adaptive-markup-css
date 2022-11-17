@@ -54,7 +54,10 @@ const Header = () => {
               <img alt="menuBtn" src={menuBtn} />
             </picture>
           </div>
-          <div className="logoIconHeader">
+          <div
+            className="logoIconHeader"
+            style={{ marginLeft: visiable && "-999px", transition: "0.9s" }}
+          >
             <picture>
               {/* <source srcSet={logoIcon2} media="(max-width: 575px)" /> */}
               <img alt="logoIcon" src={logoIcon} />
