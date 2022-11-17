@@ -9,8 +9,8 @@ const PostsPage = () => {
           ({ id, img, type, title, subTitle, date, views, content }) => (
             <div key={id} className="cardContainer">
               <picture>
-                {/* <source srcSet="imgPosts2" media="(max-width: 575px)" /> */}
-                <img className="imgPosts" srcSet="" alt="img" src={img} />
+                {/* <source srcSet={img2} media="(max-width: 575px)" /> */}
+                <img className="imgPosts" alt="img" src={img} />
               </picture>
               <p className="typeText">{type}</p>
               <p className="titleText">{title}</p>

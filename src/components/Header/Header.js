@@ -49,17 +49,22 @@ const Header = () => {
       <section className="logoContainer">
         <div className="logoItems">
           <div className="menuBtnHeader" onClick={handleBtnClick}>
-            <img alt="menuBtn" src={menuBtn} />
+            <picture>
+              {/* <source srcSet={searchIcon} media="(max-width: 575px)" /> */}
+              <img alt="menuBtn" src={menuBtn} />
+            </picture>
           </div>
-          <div>
-            <img className="logoIconHeader" alt="logoIcon" src={logoIcon} />
+          <div className="logoIconHeader">
+            <picture>
+              {/* <source srcSet={logoIcon2} media="(max-width: 575px)" /> */}
+              <img alt="logoIcon" src={logoIcon} />
+            </picture>
           </div>
-          <div style={{ cursor: "pointer" }}>
-            <img
-              className="searchIconHeader"
-              alt="searchIcon"
-              src={searchIcon}
-            />
+          <div className="searchIconHeader">
+            <picture>
+              {/* <source srcSet={searchIcon2} media="(max-width: 575px)" /> */}
+              <img alt="searchIcon" src={searchIcon} />
+            </picture>
           </div>
         </div>
       </section>
