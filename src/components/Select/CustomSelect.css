@@ -1,3 +1,11 @@
+.selectContainer .optionsSection {
+  display: none;
+}
+
+.selectContainer:hover .optionsSection {
+  display: block;
+}
+
 .selectTitleCont {
   display: flex;
   align-items: center;
@@ -12,10 +20,14 @@
   margin-right: 0.315rem;
   font-weight: 500;
   color: #000000;
-} 
+}
+
+.optionsSection {
+  margin-top: 0;
+  padding-top: 1.315rem;
+}
 
 .optionsContainer {
-  margin-top: 1.315rem;
   width: 11rem;
   border: 1px solid #e9e9e9;
   padding: 1.25rem;
@@ -66,8 +78,8 @@
     align-items: center;
     padding: 0 16px;
   }
-  .optionsContainer {
-    margin-top: -1rem;
+  .optionsSection {
+    margin-top: -2rem;
+    padding-top: 1rem;
   }
 }
-

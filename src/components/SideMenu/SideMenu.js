@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import logotype from "./assets/Logotype.svg";
 import closeIcon from "./assets/Close.svg";
 import CustomSelect from "../Select/CustomSelect";
@@ -6,18 +6,8 @@ import { selectsData } from "../../helpers/selectsData";
 import "./SideMenu.css";
 
 const SideMenu = ({ visiable, setVisiable }) => {
-  const [data, setData] = useState(selectsData);
   const sideMenu = useRef();
-
-  const handleClick = (id) => {
-    setData([
-      ...data.map((item) =>
-        item.id === id && item.isSelectItem
-          ? { ...item, optionsVisiable: !item.optionsVisiable }
-          : { ...item, optionsVisiable: false }
-      ),
-    ]);
-  };
+  const data = selectsData;
 
   const hideSideMenu = useCallback(
     (e) => {
@@ -25,10 +15,9 @@ const SideMenu = ({ visiable, setVisiable }) => {
         setVisiable(true);
       } else if (!sideMenu.current.contains(e.target)) {
         setVisiable(false);
-        setData([...data.map((i) => ({ ...i, optionsVisiable: false }))]);
       }
     },
-    [setVisiable, data, setData]
+    [setVisiable]
   );
 
   document.addEventListener("click", hideSideMenu);
@@ -42,28 +31,21 @@ const SideMenu = ({ visiable, setVisiable }) => {
   visiable && classlist.push("sideActive");
 
   return (
-    <div className="cont">
-      <div className={classlist.join(" ")}>
-        <div className="headContainer">
-          <img width={160} height={24} alt="img" src={logotype} />
-          <img
-            className="closeBtn"
-            alt="img"
-            src={closeIcon}
-            onClick={() => setVisiable(false)}
-          />
-        </div>
+    <div ref={sideMenu} className={classlist.join(" ")}>
+      <div className="headContainer">
+        <img width={160} height={24} alt="img" src={logotype} />
+        <img
+          className="closeBtn"
+          alt="img"
+          src={closeIcon}
+          onClick={() => setVisiable(false)}
+        />
+      </div>
 
-        <div ref={sideMenu}>
-          {data.map((item) => (
-            <CustomSelect
-              key={item.id}
-              item={item}
-              handleClick={handleClick}
-              mobSize={true}
-            />
-          ))}
-        </div>
+      <div>
+        {data.map((item) => (
+          <CustomSelect key={item.id} item={item} mobSize={true} />
+        ))}
       </div>
     </div>
   );

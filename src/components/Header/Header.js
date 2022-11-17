@@ -4,46 +4,20 @@ import searchIcon from "./assets/Search.svg";
 import logoIcon from "./assets/Logotype.svg";
 import CustomSelect from "../Select/CustomSelect";
 import { selectsData } from "../../helpers/selectsData";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import SideMenu from "../SideMenu/SideMenu";
 
 const Header = () => {
-  const [data, setData] = useState(selectsData);
   const [visiable, setVisiable] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [classList, setClassList] = useState(["headerContainer"]);
   const [initialValue, setInitialValue] = useState(0);
-  const selectsMenu = useRef();
 
-  const handleClick = (id) => {
-    setData([
-      ...data.map((item) =>
-        item.id === id && item.isSelectItem
-          ? { ...item, optionsVisiable: !item.optionsVisiable }
-          : { ...item, optionsVisiable: false }
-      ),
-    ]);
-  };
+  const data = selectsData
 
   const handleBtnClick = () => {
     setVisiable(true);
   };
-
-  const hideOptionsMenu = useCallback(
-    (e) => {
-      if (!selectsMenu.current.contains(e.target)) {
-        setData([...data.map((item) => ({ ...item, optionsVisiable: false }))]);
-      }
-    },
-    [data, setData]
-  );
-
-  document.addEventListener("click", hideOptionsMenu);
-
-  useEffect(
-    () => () => document.removeEventListener("click", hideOptionsMenu),
-    [hideOptionsMenu]
-  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -86,9 +60,9 @@ const Header = () => {
         </div>
       </section>
       <section className="menuContainer">
-        <div ref={selectsMenu} className="menuItems">
+        <div className="menuItems">
           {data.map((item) => (
-            <CustomSelect key={item.id} item={item} handleClick={handleClick} />
+            <CustomSelect key={item.id} item={item} />
           ))}
         </div>
       </section>
