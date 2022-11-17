@@ -33,6 +33,12 @@
   height: 1.75rem;
 }
 
+.searchIconHeader {
+  cursor: pointer;
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
 .logoItems {
   max-width: 1160px;
   width: 100%;

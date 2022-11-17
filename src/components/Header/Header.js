@@ -13,7 +13,7 @@ const Header = () => {
   const [classList, setClassList] = useState(["headerContainer"]);
   const [initialValue, setInitialValue] = useState(0);
 
-  const data = selectsData
+  const data = selectsData;
 
   const handleBtnClick = () => {
     setVisiable(true);
@@ -55,7 +55,11 @@ const Header = () => {
             <img className="logoIconHeader" alt="logoIcon" src={logoIcon} />
           </div>
           <div style={{ cursor: "pointer" }}>
-            <img alt="searchIcon" src={searchIcon} />
+            <img
+              className="searchIconHeader"
+              alt="searchIcon"
+              src={searchIcon}
+            />
           </div>
         </div>
       </section>
