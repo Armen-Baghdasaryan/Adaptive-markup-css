@@ -7,8 +7,7 @@ import { selectsData } from "../../helpers/selectsData";
 import { useEffect, useState } from "react";
 import SideMenu from "../SideMenu/SideMenu";
 
-const Header = () => {
-  const [visiable, setVisiable] = useState(false);
+const Header = ({ visiable, setVisiable }) => {
   const [scrollY, setScrollY] = useState(0);
   const [classList, setClassList] = useState(["headerContainer"]);
   const [initialValue, setInitialValue] = useState(0);
@@ -49,25 +48,20 @@ const Header = () => {
       <section className="logoContainer">
         <div className="logoItems">
           <div className="menuBtnHeader" onClick={handleBtnClick}>
-            <picture>
-              {/* <source srcSet={searchIcon} media="(max-width: 575px)" /> */}
-              <img alt="menuBtn" src={menuBtn} />
-            </picture>
+            <img alt="menuBtn" src={menuBtn} />
           </div>
           <div
             className="logoIconHeader"
             style={{ marginLeft: visiable && "-999px", transition: "0.9s" }}
           >
             <picture>
-              {/* <source srcSet={logoIcon2} media="(max-width: 575px)" /> */}
-              <img alt="logoIcon" src={logoIcon} />
+              <source media="(max-width: 579px)" srcset={logoIcon} />
+              <source media="(min-width: 580px)" srcset={logoIcon} />
+              <img alt="logoIcon" />
             </picture>
           </div>
           <div className="searchIconHeader">
-            <picture>
-              {/* <source srcSet={searchIcon2} media="(max-width: 575px)" /> */}
-              <img alt="searchIcon" src={searchIcon} />
-            </picture>
+            <img alt="searchIcon" src={searchIcon} />
           </div>
         </div>
       </section>

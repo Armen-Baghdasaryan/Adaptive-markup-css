@@ -34,18 +34,16 @@ const SideMenu = ({ visiable, setVisiable }) => {
     <div ref={sideMenu} className={classlist.join(" ")}>
       <div className="headContainer">
         <picture>
-          {/* <source srcSet={logotype2} media="(max-width: 575px)" /> */}
-          <img width={160} height={24} alt="img" src={logotype} />
+          <source media="(max-width: 579px)" srcset={logotype} />
+          <source media="(min-width: 580px)" srcset={logotype} />
+          <img alt="logoIcon" />
         </picture>
-        <picture>
-          {/* <source srcSet={closeIcon} media="(max-width: 575px)" /> */}
-          <img
-            className="closeBtn"
-            alt="img"
-            src={closeIcon}
-            onClick={() => setVisiable(false)}
-          />
-        </picture>
+        <img
+          className="closeBtn"
+          alt="img"
+          src={closeIcon}
+          onClick={() => setVisiable(false)}
+        />
       </div>
 
       <div>

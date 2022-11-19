@@ -9,12 +9,14 @@ import image6 from "./assets/image6.jpg";
 import image7 from "./assets/image7.jpg";
 import image8 from "./assets/image8.jpg";
 import image9 from "./assets/image9.jpg";
+import sm from "./assets/200.jpeg";
 
 export const postsData = [
   //1
   {
     id: nanoid(),
-    img: image1,
+    smallImg: sm,
+    largeImg: image1,
     type: "Lifestyle",
     title: "Eat Right For Your Exercise Regime",
     subTitle: "Niek Bove",
@@ -26,7 +28,8 @@ export const postsData = [
   //2
   {
     id: nanoid(),
-    img: image2,
+    smallImg: image2,
+    largeImg: image2,
     type: "Lifestyle",
     title: "The Look: Perfect Balance",
     subTitle: "Niek Bove",
@@ -38,7 +41,8 @@ export const postsData = [
   //3
   {
     id: nanoid(),
-    img: image3,
+    smallImg: image3,
+    largeImg: image3,
     type: "Style",
     title: "Fun Things to Do in Rome",
     subTitle: "Niek Bove",
@@ -50,7 +54,8 @@ export const postsData = [
   //4
   {
     id: nanoid(),
-    img: image4,
+    smallImg: image4,
+    largeImg: image4,
     type: "Style",
     title: "24 Colorful Ceilings That Add Unexpected Contrast to Any Room",
     subTitle: "Niek Bove",
@@ -62,7 +67,8 @@ export const postsData = [
   //5
   {
     id: nanoid(),
-    img: image5,
+    smallImg: image5,
+    largeImg: image5,
     type: "Lifestyle",
     title: "9 New Songs to Heat Up Your Fall Playlist",
     subTitle: "Niek Bove",
@@ -74,7 +80,8 @@ export const postsData = [
   //6
   {
     id: nanoid(),
-    img: image6,
+    smallImg: image6,
+    largeImg: image6,
     type: "Events",
     title: "What You Need on Your Bedside Table",
     subTitle: "Niek Bove",
@@ -86,7 +93,8 @@ export const postsData = [
   //7
   {
     id: nanoid(),
-    img: image7,
+    smallImg: image7,
+    largeImg: image7,
     type: "Travel",
     title: "When Two Wheels Are Better Than Four",
     subTitle: "Niek Bove",
@@ -98,7 +106,8 @@ export const postsData = [
   //8
   {
     id: nanoid(),
-    img: image8,
+    smallImg: image8,
+    largeImg: image8,
     type: "Travel",
     title: "26 Living Room Ideas from the Homes of Top Designers",
     subTitle: "Niek Bove",
@@ -110,7 +119,8 @@ export const postsData = [
   //9
   {
     id: nanoid(),
-    img: image9,
+    smallImg: image9,
+    largeImg: image9,
     type: "Music",
     title: "What Makes Your City’s Style Unique",
     subTitle: "Niek Bove",
